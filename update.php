@@ -18,7 +18,7 @@ if (isset($_POST['action'])) {
         'another_section' => 'This is another section',
         'changelog' => 'Some new features'
       );
-      $obj->download_link = 'http://updates.s3.dealertrend.com/wp-plugin-inventory-api/update.php';
+      $obj->download_link = 'http://updates.s3.dealertrend.com/wp-plugin-inventory-api/current/dealertrend-inventory-api.zip';
       echo serialize($obj);
     case 'license':
       echo 'false';
@@ -28,6 +28,6 @@ if (isset($_POST['action'])) {
     header('Cache-Control: public');
     header('Content-Description: File Transfer');
     header('Content-Type: application/zip');
-    readfile('current/dealertrend-inventory-api.zip');
+    readfile('http://updates.s3.dealertrend.com/wp-plugin-inventory-api/current/dealertrend-inventory-api.zip');
 }
 ?>
